@@ -65,7 +65,7 @@ while True:
 
     for link0 in link1_list:
 
-        page2 = BeautifulSoup(requests.get(link0,headers=headers).text, "lxml")
+        page2 = BeautifulSoup(requests.get(link0,headers=headers).text, "html.parser")
 
         opisanie = page2.find("div", class_="fdesc clearfix slice-this").text
 
@@ -85,7 +85,7 @@ while True:
         opisanie1 = opisanie_list[i]
         link2 = link1_list[i]
 
-        cur.execute("""INSERT INTO KINO3 (RESURS, NAME, GOD, OPISANIE, LINK_STR) VALUES (?, ?, ?, ?, ?);""", (resursZERO, name1, god1, opisanie1, link2))
+        cur.execute("""INSERT INTO Triangle_Kino (RESURS, NAME, GOD, OPISANIE, LINK_STR) VALUES (?, ?, ?, ?, ?);""", (resursZERO, name1, god1, opisanie1, link2))
         db.commit()
         print("Добавлено " + str(i))
         i = i + 1
