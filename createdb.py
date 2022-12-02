@@ -85,7 +85,7 @@ while True:
         opisanie1 = opisanie_list[i]
         link2 = link1_list[i]
 
-        cur.execute("""INSERT INTO Triangle_Kino (RESURS, NAME, GOD, OPISANIE, LINK_STR) VALUES (?, ?, ?, ?, ?);""", (resursZERO, name1, god1, opisanie1, link2))
+        cur.execute("""INSERT INTO KINO3 (RESURS, NAME, GOD, OPISANIE, LINK_STR) VALUES (?, ?, ?, ?, ?);""", (resursZERO, name1, god1, opisanie1, link2))
         db.commit()
         print("Добавлено " + str(i))
         i = i + 1
